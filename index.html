@@ -3,38 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Komori | Indie iOS Developer</title>
+    <title>Komori | iOS Developer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap">
     <style>
+        :root {
+            --primary-color: #0A84FF;
+            --text-color: #FFFFFF;
+            --background-color: #000000;
+            --section-background: #1C1C1E;
+            --spacing: 20px;
+        }
+
         body {
-            background-color: #000;
-            color: #0f0;
-            font-family: monospace;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .header {
+            padding: calc(var(--spacing) * 4) var(--spacing);
             text-align: center;
-            padding: 20px;
+            background: var(--background-color);
         }
-        a {
-            color: #0ff;
-            text-decoration: none;
+
+        .name {
+            font-size: 48px;
+            font-weight: 600;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        .glitch {
+
+        .title {
             font-size: 24px;
-            font-weight: bold;
-            animation: glitch 1s infinite alternate;
+            color: #98989F;
+            margin: var(--spacing) 0;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
         }
-        @keyframes glitch {
-            0% { text-shadow: 2px 2px #0ff, -2px -2px #f00; }
-            100% { text-shadow: -2px -2px #0ff, 2px 2px #f00; }
+
+        .section {
+            padding: calc(var(--spacing) * 3) var(--spacing);
+            background: var(--section-background);
+            margin: var(--spacing) 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: var(--spacing);
+            text-align: center;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill {
+            background: #2C2C2E;
+            padding: calc(var(--spacing) / 2) var(--spacing);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: calc(var(--spacing) * 2);
+            margin-top: calc(var(--spacing) * 2);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .name { font-size: 36px; }
+            .title { font-size: 20px; }
+            .section-title { font-size: 24px; }
         }
     </style>
 </head>
 <body>
-    <h1 class="glitch">Komori</h1>
-    <p>Indie iOS Developer | Open Source & Decentralization Enthusiast</p>
-    <p><a href="https://github.com/KomoriNoKage" target="_blank">GitHub</a></p>
-    <p><a href="https://njump.me/komori@nostrplebs.com" target="_blank">Nostr (npub1wfurf...smx9)</a></p>
-    <p><a href="mailto:komorinokage@protonmail.com">Email Me</a></p>
+    <header class="header">
+        <h1 class="name">Komori</h1>
+        <p class="title">iOS Developer & Open Source Enthusiast</p>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">Expertise</h2>
+        <div class="skills">
+            <div class="skill">Swift & SwiftUI</div>
+            <div class="skill">UIKit</div>
+            <div class="skill">iOS Development</div>
+            <div class="skill">App Architecture</div>
+            <div class="skill">Core Data</div>
+            <div class="skill">Push Notifications</div>
+            <div class="skill">App Store Connect</div>
+            <div class="skill">Git & CI/CD</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Development Philosophy</h2>
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p>Crafting intuitive iOS experiences with clean code and thoughtful design. Focused on building apps that respect user privacy and enhance daily life.</p>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: calc(var(--spacing) * 2);">
+        <div class="links">
+            <a href="https://github.com/KomoriNoKage" target="_blank">GitHub</a>
+            <a href="https://njump.me/komori@nostrplebs.com" target="_blank">Nostr</a>
+            <a href="mailto:komorinokage@protonmail.com">Contact</a>
+        </div>
+    </footer>
 </body>
 </html>
