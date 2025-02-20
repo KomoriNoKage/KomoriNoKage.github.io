@@ -1,145 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Komori | iOS Developer</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap">
-    <style>
-        :root {
-            --primary-color: #0A84FF;
-            --text-color: #FFFFFF;
-            --background-color: #000000;
-            --section-background: #1C1C1E;
-            --spacing: 20px;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .header {
-            padding: calc(var(--spacing) * 4) var(--spacing);
-            text-align: center;
-            background: var(--background-color);
-        }
-
-        .name {
-            font-size: 48px;
-            font-weight: 600;
-            margin: 0;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .title {
-            font-size: 24px;
-            color: #98989F;
-            margin: var(--spacing) 0;
-            opacity: 0;
-            animation: fadeIn 0.8s ease-out 0.2s forwards;
-        }
-
-        .section {
-            padding: calc(var(--spacing) * 3) var(--spacing);
-            background: var(--section-background);
-            margin: var(--spacing) 0;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: var(--spacing);
-            text-align: center;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--spacing);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .skill {
-            background: #2C2C2E;
-            padding: calc(var(--spacing) / 2) var(--spacing);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease;
-        }
-
-        .skill:hover {
-            transform: scale(1.05);
-        }
-
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: calc(var(--spacing) * 2);
-            margin-top: calc(var(--spacing) * 2);
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-
-        a:hover {
-            opacity: 0.7;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .name { font-size: 36px; }
-            .title { font-size: 20px; }
-            .section-title { font-size: 24px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>iOS Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#000000">
 </head>
 <body>
-    <header class="header">
-        <h1 class="name">Komori</h1>
-        <p class="title">iOS Developer & Open Source Enthusiast</p>
-    </header>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Komori</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section class="section">
-        <h2 class="section-title">Expertise</h2>
-        <div class="skills">
-            <div class="skill">Swift & SwiftUI</div>
-            <div class="skill">UIKit</div>
-            <div class="skill">iOS Development</div>
-            <div class="skill">App Architecture</div>
-            <div class="skill">Core Data</div>
-            <div class="skill">Push Notifications</div>
-            <div class="skill">App Store Connect</div>
-            <div class="skill">Git & CI/CD</div>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hi, I'm Komori</h1>
+      <p>iOS Developer crafting beautiful and<br>innovative mobile experiences.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
 
-    <section class="section">
-        <h2 class="section-title">Development Philosophy</h2>
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <p>Crafting intuitive iOS experiences with clean code and thoughtful design. Focused on building apps that respect user privacy and enhance daily life.</p>
-        </div>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate iOS developer focused on creating seamless,
+        user-friendly mobile experiences. With a deep understanding of
+        Apple's Human Interface Guidelines and SwiftUI, I craft
+        apps that feel right at home on iOS.
+      </p>
+    </div>
+  </section>
 
-    <footer style="text-align: center; padding: calc(var(--spacing) * 2);">
-        <div class="links">
-            <a href="https://github.com/KomoriNoKage" target="_blank">GitHub</a>
-            <a href="https://njump.me/komori@nostrplebs.com" target="_blank">Nostr</a>
-            <a href="mailto:komorinokage@protonmail.com">Contact</a>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Swift</li>
+        <li>SwiftUI</li>
+        <li>UIKit</li>
+        <li>Core Data</li>
+        <li>REST APIs</li>
+        <li>Git</li>
+        <li>MVVM</li>
+        <li>Unit Testing</li>
+        <li>Xcode</li>
+        <li>Cocoapods</li>
+        <li>JSON</li>
+        <li>Firebase</li>
+        <li>Push Notifications</li>
+        <li>App Store Connect</li>
+        <li>CI/CD</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <!-- Example Project Card -->
+        <div class="project-card">
+          <h3>Coming Soon</h3>
         </div>
-    </footer>
+        <!-- More project cards can be added here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:komori@example.com" class="btn">Email Me</a>
+        <a href="https://github.com/Komori" class="btn">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Komori. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
